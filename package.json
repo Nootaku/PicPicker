@@ -1,0 +1,43 @@
+{
+  "name": "PicPicker",
+  "version": "1.0.0",
+  "description": "Easily copy pictures from one folder to another.",
+  "main": "./main.js",
+  "scripts": {
+    "start": "sass styles.scss styles.css && electron .",
+    "compile": "sass styles.scss styles.css",
+    "dist": "electron-builder -wl"
+  },
+  "repository": "https://github.com/Nootaku/Picpicker",
+  "keywords": [
+    "Electron",
+    "Clickado",
+    "Picpicker",
+    "demo"
+  ],
+  "author": "Maxime WATTEZ <max.wattez@protonmail.com>",
+  "license": "GNU GENERAL PUBLIC LICENSE",
+  "devDependencies": {
+    "electron": "^9.0.5",
+    "electron-builder": "^22.9.1"
+  },
+  "dependencies": {
+    "sass": "^1.26.10"
+  },
+  "build": {
+    "appId": "com.docenhance.picpicker",
+    "copyright": "Copyright © 2020 MAXIME WATTEZ",
+    "productName": "PicPicker",
+    "electronVersion": "9.0.5",
+    "linux": {
+      "target": [
+        "appImage",
+        "deb"
+      ],
+      "category": "Utility"
+    },
+    "win": {
+      "target": "nsis"
+    }
+  }
+}

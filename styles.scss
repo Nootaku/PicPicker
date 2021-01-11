@@ -1,0 +1,135 @@
+/* FIBONACCI */
+$nano: 5px;
+$micro: 8px;
+$mili: 13px;
+$centi: 21px;
+$deci: 34px;
+$base: 55px;
+$deca: 89px;
+$hecto: 144px;
+$kilo: 233px;
+
+
+/* CONTAINER */
+.container {
+  width: 95%;
+  margin: $centi auto;
+  button {
+    cursor: pointer;
+  }
+
+  /* PICTURE ZONE */
+  .pictureDiv {
+    border-radius: $mili;
+    height: calc(100vh - 200px);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    #picture {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      margin: auto;
+      &.rotated {
+        max-width: calc(100vh - 200px);
+      }
+    }
+    #previous, #next {
+      position: absolute;
+      top: calc((100vh - 200px) / 2);
+      height: $deci;
+      width: $deci;
+      border-radius: 50%;
+      border: none;
+      background-color: rgba(111, 193, 198, 0.5);
+      &:hover {
+        background-color: #6fc1c6;
+      }
+    }
+    #previous {left: 12px;}
+    #next {right: 10px;}
+  }
+  /* CONTROLS */
+  .controlContainer {
+    position: absolute;
+    bottom: $deci;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(50vw + 72px);
+
+    .directories {
+      display: flex;
+      flex-direction: column;
+
+      .selector {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        * {
+          margin: 0;
+        }
+
+        .selectorTitle {
+          min-width: $base;
+        }
+        .selected {
+          min-width: $hecto;
+          background-color: #FFFFFF;
+          color: #636363;
+          padding: $micro $centi;
+          margin: $micro;
+        }
+      }
+    }
+
+    .executeContainer {
+      .execute {
+        border-radius: $micro;
+        background-color: #2E2E2E;
+        height: $deca;
+        width: $hecto;
+        border: none;
+        font-size: $centi;
+        color: #fffafa;
+        &:hover {
+          background-color: #fffafa;
+          color: #2E2E2E;
+        }
+      }
+    }  }
+}
+.logo {
+  position: absolute;
+  bottom: $deci;
+  right: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .poweredBy {
+    color: #FAFAFA;
+    font-size: 0.8em;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+#success {
+  display: none;
+  height: 80px;
+  width: 400px;
+  background-color: #2E2E2E;
+  color: #e0e0e0;
+  position: absolute;
+  top: calc(50vh - 40px);
+  left: calc(50vw - 200px);
+  &.success {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
