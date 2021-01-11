@@ -75,7 +75,7 @@ ipc.on('selectedDir', function(event, isInputDir, dirPath) {
         }
         files.map((file) => {
           if (EXTENSIONS.indexOf(path.extname(file)) >= 0) {
-            LIST_OF_PICTURES.push(path.join(dirPath, file);
+            LIST_OF_PICTURES.push(path.join(dirPath, file));
           }
         })
 
