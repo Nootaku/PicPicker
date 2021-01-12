@@ -112,7 +112,7 @@ function displayPictureByIndex(index) {
 function nextOrPreviousPicture(isNext) {
   SELECTED_PICTURE_ROTATION = 0
   picture.style.transform = 'none';
-  const currentPicturePath = picture.src.slice(7).replace('%20', ' ');
+  const currentPicturePath = picture.getAttribute("src");
   const indexOfCurrentPicture = LIST_OF_PICTURES.indexOf(currentPicturePath);
   if (isNext) {
     displayPictureByIndex(indexOfCurrentPicture + 1)
@@ -143,13 +143,16 @@ function chargeClickado() {
 }
 
 function getCurrentPicturePath() {
-  const currentPicturePath = picture.src.slice(7).replace('%20', ' ');
+  const currentPicturePath = picture.getAttribute("src");
   const indexOfCurrentPicture = LIST_OF_PICTURES.indexOf(currentPicturePath);
   return LIST_OF_PICTURES[indexOfCurrentPicture]
 }
 
 function copyPictureToOutputDir() {
-  const currentPicturePath = getCurrentPicturePath()
+  const currentPicturePath = picture.getAttribute("src");
+  console.log("Output dir: ", OUTPUT_DIR)
+  console.log("Pic: ", currentPicturePath)
+
   fs.copyFile(
     currentPicturePath, // source
     path.join(OUTPUT_DIR, path.basename(currentPicturePath)), // dest
