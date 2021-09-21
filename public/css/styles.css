@@ -1,0 +1,104 @@
+/* FIBONACCI */
+/* CONTAINER */
+body {
+  background-color: transparent;
+}
+
+/* PICTURE ZONE */
+.pictureContainer {
+  height: calc(100vh - 250px);
+}
+
+.pictureDiv {
+  border-radius: 13px;
+  overflow: hidden;
+  max-height: calc(100vh - 250px);
+  width: auto;
+}
+.pictureDiv.rotated {
+  height: calc(100vh - 200px);
+}
+.pictureDiv #picture {
+  max-width: 100%;
+  max-height: calc(100vh - 250px);
+  width: auto;
+  height: auto;
+}
+.pictureDiv #picture.rotated {
+  max-width: calc(100vh - 200px);
+}
+
+.navigate-btn {
+  height: 34px;
+  width: 34px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(111, 193, 198, 0.5) !important;
+}
+.navigate-btn:hover {
+  background-color: #6fc1c6 !important;
+}
+
+/* CONTROLS */
+.directories {
+  min-width: 300px;
+}
+.directories .selector {
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin: 3px 0;
+}
+.directories .selector * {
+  margin: 0;
+}
+.directories .selector .selectorTitle {
+  min-width: 55px;
+}
+.directories .selector .selectorBtn {
+  margin-left: 8px;
+}
+.directories .counter {
+  font-weight: bold;
+  margin: 0;
+}
+.directories .counter #counter {
+  background-color: #20c997;
+}
+
+.executeContainer .execute {
+  border-radius: 8px;
+  background-color: #2e2e2e;
+  height: 89px;
+  width: 144px;
+}
+.executeContainer .execute:hover {
+  background-color: #fffafa;
+  color: #2e2e2e;
+}
+
+.logo {
+  align-items: center;
+}
+.logo .poweredBy {
+  color: #fafafa;
+  font-size: 0.8em;
+  margin: 0;
+  padding: 0;
+}
+
+#success {
+  display: none;
+  height: 80px;
+  width: 400px;
+  position: absolute;
+  top: calc(50vh - 40px);
+  left: calc(50vw - 200px);
+}
+#success.success {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*# sourceMappingURL=styles.css.map */

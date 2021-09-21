@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <meta
+      http-equiv="X-Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <title>Clickado's PicPicker</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../node_modules/bootstrap/dist/css/bootstrap.css"
+    />
+
+    <link rel="stylesheet" type="text/css" href="./css/styles.css" />
+  </head>
+  <body>
+    <!-- PICTURE CONTAINER -->
+    <div class="container-fluid p-5">
+      <div
+        class="d-flex justify-content-between align-items-center pictureContainer"
+      >
+        <button id="previous" class="btn navigate-btn">&#60;</button>
+        <div id="pictureDiv" class="pictureDiv d-flex align-items-center mx-3">
+          <img id="picture" class="img rounded" src="./images/nodir.jpg" />
+        </div>
+        <button id="next" class="btn navigate-btn">&#62;</button>
+      </div>
+    </div>
+
+    <!-- COMMANDS CONTAINER -->
+    <div
+      class="fixed-bottom d-flex flex-row justify-content-between align-items-center px-5 mb-3"
+    >
+      <!-- SELECT INPUT & OUTPUT -->
+      <div class="directories d-flex flex-column">
+        <div class="d-flex flex-row selector">
+          <p class="selectorTitle">From:</p>
+          <input
+            id="selectedDirFrom"
+            class="form-control"
+            type="text"
+            placeholder="Select file"
+            readonly
+          />
+          <button id="dirFrom" class="btn btn-secondary selectorBtn">
+            Select
+          </button>
+        </div>
+        <div class="d-flex flex-row selector">
+          <p class="selectorTitle">To:</p>
+          <input
+            id="selectedDirTo"
+            class="form-control"
+            type="text"
+            placeholder="Select file"
+            readonly
+          />
+          <button id="dirTo" class="btn btn-secondary selectorBtn">
+            Select
+          </button>
+        </div>
+        <p class="counter">
+          Total pictures:
+          <span id="counter" class="badge badge-pill">Unknown</span>
+        </p>
+      </div>
+
+      <!-- COPY PICTURE -->
+      <div class="executeContainer">
+        <button
+          id="clickado"
+          class="btn btn-dark execute"
+          type="button"
+          name="clickado"
+          disabled
+        >
+          Copy
+        </button>
+      </div>
+      <div class="d-flex flex-column logo">
+        <h6 class="poweredBy">Powered by:</h6>
+        <img src="./images/xs_logo.png" />
+      </div>
+    </div>
+
+    <div id="success" class="alert alert-success">
+      <h5>Your pic has been picked !</h5>
+    </div>
+
+    <!-- You can also require other files to run in this process -->
+    <script src="../src/renderer.js"></script>
+  </body>
+</html>

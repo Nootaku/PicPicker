@@ -2,10 +2,10 @@
   "name": "PicPicker",
   "version": "1.0.1",
   "description": "Easily copy pictures from one folder to another.",
-  "main": "./main.js",
+  "main": "./src/main.js",
   "scripts": {
-    "start": "./node_modules/.bin/sass styles.scss styles.css && ./node_modules/.bin/electron .",
-    "compile": "sass styles.scss styles.css",
+    "start": "./node_modules/.bin/sass public/css/styles.scss public/css/styles.css && ./node_modules/.bin/electron .",
+    "compile": "./node_modules/.bin/sass styles.scss styles.css",
     "dist": "electron-builder -wl"
   },
   "repository": "https://github.com/Nootaku/Picpicker",
@@ -18,10 +18,13 @@
   "author": "Maxime WATTEZ <max.wattez@protonmail.com>",
   "license": "GNU GENERAL PUBLIC LICENSE",
   "devDependencies": {
-    "electron": "^9.4.4",
-    "electron-builder": "^22.9.1"
+    "electron-builder": "^22.9.1",
+    "electron-reload": "^2.0.0-alpha.1",
+    "electron-reloader": "^1.2.1"
   },
   "dependencies": {
+    "electron": "^9.4.4",
+    "bootstrap": "^5.1.1",
     "sass": "^1.42.0"
   },
   "build": {
