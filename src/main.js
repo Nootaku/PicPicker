@@ -11,6 +11,21 @@ const dialog = electron.dialog;
 const MenuItem = electron.MenuItem;
 const ipc = electron.ipcMain;
 
+// reload
+const env = process.env.NODE_ENV || "development";
+
+// If development environment
+if (env === "development") {
+  try {
+    require("electron-reloader")(module, {
+      debug: true,
+      watchRenderer: true,
+    });
+  } catch (_) {
+    console.log("Error");
+  }
+}
+
 /*
 Using deconstruction we could write the four lines above as:
 import {app, BrowserWindow, Menu} from 'electron'
@@ -34,16 +49,18 @@ function createWindow() {
     show: false,
     backgroundColor: "#23787D",
     title: "Clickado",
-    icon: path.join(__dirname, "public", "images", "50x50.png"),
+    icon: path.join(__dirname, "..", "public", "images", "50x50.png"),
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
       nodeIntegration: true,
       enableRemoteModule: true,
     },
+    width: 1200,
+    height: 800,
   });
 
   // and load the index.html of the app.
-  mainWindow.loadFile("index.html");
+  mainWindow.loadFile(path.join(__dirname, "..", "public", "index.html"));
 
   // best practice: don't show the window directly
   mainWindow.once("ready-to-show", function () {

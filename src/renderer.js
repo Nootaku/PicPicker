@@ -17,6 +17,7 @@ let OUTPUT_DIR = null;
 const BASE_IMG_PATH = "./public/images/nodir.jpg";
 let SELECTED_PICTURE_ROTATION = 0;
 let LIST_OF_PICTURES = [];
+let COPY_COUNTER = 0;
 const EXTENSIONS = [".jpg", ".png", ".jpeg", ".JPG", ".PNG", ".JPEG"];
 
 // Contextual Menu Event Handler -----------------------------------------------
@@ -32,11 +33,13 @@ const selectFrom = document.getElementById("dirFrom");
 const selectedFrom = document.getElementById("selectedDirFrom");
 const selectTo = document.getElementById("dirTo");
 const selectedTo = document.getElementById("selectedDirTo");
+const pictureDiv = document.getElementById("pictureDiv");
 const picture = document.getElementById("picture");
 const previous = document.getElementById("previous");
 const next = document.getElementById("next");
 const clickado = document.getElementById("clickado");
 const success = document.getElementById("success");
+const counter = document.getElementById("counter");
 
 // event listeners
 selectFrom.addEventListener("click", (event) => {
@@ -65,7 +68,7 @@ ipc.on("selectedDir", function (event, isInputDir, dirPath) {
   if (isInputDir && dirPath) {
     const dirBasename = path.basename(dirPath);
     INPUT_DIR = dirPath;
-    selectedFrom.innerHTML = dirBasename;
+    selectedFrom.value = dirBasename;
     if (dirPath) {
       fs.readdir(dirPath, function (err, files) {
         if (err) {
@@ -87,7 +90,7 @@ ipc.on("selectedDir", function (event, isInputDir, dirPath) {
   } else if (dirPath) {
     const dirBasename = path.basename(dirPath);
     OUTPUT_DIR = dirPath;
-    selectedTo.innerHTML = dirBasename;
+    selectedTo.value = dirBasename;
   }
 
   chargeClickado();
@@ -111,6 +114,10 @@ function displayPictureByIndex(index) {
 }
 
 function nextOrPreviousPicture(isNext) {
+  if (pictureDiv.classList.contains("rotated")) {
+    pictureDiv.classList.toggle("rotated");
+    picture.classList.toggle("rotated");
+  }
   SELECTED_PICTURE_ROTATION = 0;
   picture.style.transform = "none";
   const currentPicturePath = picture.getAttribute("src");
@@ -123,10 +130,11 @@ function nextOrPreviousPicture(isNext) {
 }
 
 function rotatePicture(clockwise) {
+  pictureDiv.classList.toggle("rotated");
+  picture.classList.toggle("rotated");
   if (clockwise) {
     SELECTED_PICTURE_ROTATION += 90;
     picture.style.transform = `rotate(${SELECTED_PICTURE_ROTATION}deg)`;
-    picture.classList.toggle("rotated");
   } else {
     SELECTED_PICTURE_ROTATION -= 90;
     picture.style.transform = `rotate(${SELECTED_PICTURE_ROTATION}deg)`;
@@ -167,4 +175,9 @@ function copyPictureToOutputDir() {
       }, 1225);
     }
   );
+
+  fs.readdir(OUTPUT_DIR, (err, files) => {
+    COPY_COUNTER = files.length;
+    counter.innerHTML = COPY_COUNTER;
+  });
 }

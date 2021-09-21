@@ -1,0 +1,113 @@
+/* FIBONACCI */
+$nano: 5px;
+$micro: 8px;
+$mili: 13px;
+$centi: 21px;
+$deci: 34px;
+$base: 55px;
+$deca: 89px;
+$hecto: 144px;
+$kilo: 233px;
+
+/* CONTAINER */
+body {
+  background-color: transparent;
+}
+
+/* PICTURE ZONE */
+.pictureContainer {
+  height: calc(100vh - 250px);
+}
+.pictureDiv {
+  border-radius: $mili;
+  overflow: hidden;
+  max-height: calc(100vh - 250px);
+  width: auto;
+  &.rotated {
+    height: calc(100vh - 200px);
+  }
+
+  #picture {
+    max-width: 100%;
+    max-height: calc(100vh - 250px);
+    width: auto;
+    height: auto;
+    &.rotated {
+      max-width: calc(100vh - 200px);
+    }
+  }
+}
+.navigate-btn {
+  height: $deci;
+  width: $deci;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(111, 193, 198, 0.5) !important;
+  &:hover {
+    background-color: #6fc1c6 !important;
+  }
+}
+/* CONTROLS */
+
+.directories {
+  min-width: 300px;
+  .selector {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3px 0;
+    * {
+      margin: 0;
+    }
+    .selectorTitle {
+      min-width: $base;
+    }
+    .selectorBtn {
+      margin-left: $micro;
+    }
+  }
+  .counter {
+    font-weight: bold;
+    margin: 0;
+    #counter {
+      background-color: #20c997;
+    }
+  }
+}
+
+.executeContainer {
+  .execute {
+    border-radius: $micro;
+    background-color: #2e2e2e;
+    height: $deca;
+    width: $hecto;
+    &:hover {
+      background-color: #fffafa;
+      color: #2e2e2e;
+    }
+  }
+}
+
+.logo {
+  align-items: center;
+  .poweredBy {
+    color: #fafafa;
+    font-size: 0.8em;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+#success {
+  display: none;
+  height: 80px;
+  width: 400px;
+  position: absolute;
+  top: calc(50vh - 40px);
+  left: calc(50vw - 200px);
+  &.success {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
