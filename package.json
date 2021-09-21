@@ -4,7 +4,7 @@
   "description": "Easily copy pictures from one folder to another.",
   "main": "./main.js",
   "scripts": {
-    "start": "sass styles.scss styles.css && electron .",
+    "start": "./node_modules/.bin/sass styles.scss styles.css && ./node_modules/.bin/electron .",
     "compile": "sass styles.scss styles.css",
     "dist": "electron-builder -wl"
   },
@@ -18,11 +18,11 @@
   "author": "Maxime WATTEZ <max.wattez@protonmail.com>",
   "license": "GNU GENERAL PUBLIC LICENSE",
   "devDependencies": {
-    "electron": "^9.0.5",
+    "electron": "^9.4.4",
     "electron-builder": "^22.9.1"
   },
   "dependencies": {
-    "sass": "^1.26.10"
+    "sass": "^1.42.0"
   },
   "build": {
     "appId": "com.docenhance.picpicker",
