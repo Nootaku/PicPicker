@@ -5,7 +5,7 @@
 
 ## What is PickPicker ?
 
-_PicPicker_ is a simple application that allows the user to copy pictures from one directory to another. This removes the hassle of copy-pasting pictures individually when sorting holiday pictures for an album for example.
+_PicPicker_ is a simple application that allows the user to copy pictures from one directory to another. This removes the hassle of copy-pasting pictures individually when sorting holiday pictures for an album for example.<br/>
 All in all, it is simply an image viewer with a button to copy the picture on display to the wished directory.
 
 ## How does it work ?
@@ -22,24 +22,4 @@ In case the picture is not oriented correctly, you can press the **_Up or Down k
 
 This program is still a work in progress. Even thought this first version is perfectly functional, some visual bugs are possible, including:
 
-- See-through pictures on Windows
 - Once rotated pictures may lose their ratio
-- When the window is maximized or minimized, the buttons might not be centered anymore
-
-## For Developers
-
-Feel free to use my code and to add / change whatever you want. If you create a new release, please include me in the loop so I can see what has been done and add it to the original if I like it.
-
-## Next objectives
-
-1. resolve the Limitations
-2. add keyboard shortcuts:
-
-- spacebar = Copy
-- MacOS specific "power-user" shortcuts (<cmd+q> for example)
-
-3. webapp and API
-
-## In process
-
-Change frontend framework to Electron.
