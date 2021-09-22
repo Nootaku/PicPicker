@@ -34,28 +34,28 @@ class AppMenu {
     return this.template;
   }
 
-  // Alter Menu for MacOSX
-  macOSMenu(t, appName) {
-    t.unshift(macOSMenu);
-    this.template.forEach((item) => {
-      if (item.label === "Window") {
-        item.submenu.push(
-          {
-            type: 'separator',
-          }
-        )
-        item.submenu.push(
-          {
-            label: 'Reopen Window',
-            accelerator: 'CmdOrCrtl+Shift+T',
-            enabled: false,
-            key: 'reopenMenuItem',
-            click: () => app.emit('activate'),
-          }
-        );
-      }
-    });
-  }
+  // TODO: add Reopen in Window Menu for MacOSX
+  // getMacOSMenu(template, appName) {
+  //   template.unshift(macOSMenu);
+  //   template.forEach((item) => {
+  //     if (item.label === "Window") {
+  //       item.submenu.push(
+  //         {
+  //           type: 'separator',
+  //         }
+  //       )
+  //       item.submenu.push(
+  //         {
+  //           label: 'Reopen Window',
+  //           accelerator: 'CmdOrCrtl+Shift+T',
+  //           enabled: false,
+  //           key: 'reopenMenuItem',
+  //           click: () => app.emit('activate'),
+  //         }
+  //       );
+  //     }
+  //   });
+  // }
 }
 
 module.exports = AppMenu;

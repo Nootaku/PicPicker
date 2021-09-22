@@ -32,8 +32,7 @@ const windowMenu = {
       accelerator: 'CmdOrCtrl+Q',
       role: 'close',
     },
-    /*
-    Added only on Mac OSX (see menu.js)
+    // Added only on Mac OSX (see menu.js)
     {
       type: 'separator',
     },
@@ -44,7 +43,6 @@ const windowMenu = {
       key: 'reopenMenuItem',
       click: () => app.emit('activate'),
     },
-    */
   ],
 }
 

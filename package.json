@@ -6,7 +6,7 @@
   "scripts": {
     "start": "./node_modules/.bin/sass public/css/styles.scss public/css/styles.css && ./node_modules/.bin/electron .",
     "compile": "./node_modules/.bin/sass styles.scss styles.css",
-    "dist": "electron-builder -wl"
+    "dist": "electron-builder -m"
   },
   "repository": "https://github.com/Nootaku/Picpicker",
   "keywords": [
@@ -18,12 +18,12 @@
   "author": "Maxime WATTEZ <max.wattez@protonmail.com>",
   "license": "GNU GENERAL PUBLIC LICENSE",
   "devDependencies": {
-    "electron-builder": "^22.9.1",
+    "electron": "^9.4.4",
+    "electron-builder": "^22.11.7",
     "electron-reload": "^2.0.0-alpha.1",
     "electron-reloader": "^1.2.1"
   },
   "dependencies": {
-    "electron": "^9.4.4",
     "bootstrap": "^5.1.1",
     "sass": "^1.42.0"
   },
@@ -31,7 +31,7 @@
     "appId": "com.docenhance.picpicker",
     "copyright": "Copyright © 2020 MAXIME WATTEZ",
     "productName": "PicPicker",
-    "electronVersion": "9.0.5",
+    "electronVersion": "9.4.4",
     "linux": {
       "target": [
         "appImage",
@@ -41,6 +41,12 @@
     },
     "win": {
       "target": "nsis"
+    },
+    "mac": {
+      "target": [
+        "default"
+      ],
+      "category": "Utilities"
     }
   }
 }

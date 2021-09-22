@@ -1,32 +1,32 @@
-const macOSMenu = () => {
+const macOSMenu = (app, appName) => {
   return {
     label: appName,
     submenu: [
       {
-        label: 'About ${appName}',
+        label: `About ${appName}`,
         role: 'about',
       },
       {
         type: 'separator',
       },
+      // {
+      //   label: 'Preferences',
+      //   accelerator: 'Command+,',
+      //   click: app.appPrefs,
+      // },
+      // {
+      //   type: 'separator',
+      // },
+      // {
+      //   label: 'Services',
+      //   role: 'services',
+      //   submenu: [],
+      // },
+      // {
+      //   type: 'separator',
+      // },
       {
-        label: 'Preferences',
-        accelerator: 'Command+,',
-        click: appPrefs,
-      },
-      {
-        type: 'separator',
-      },
-      {
-        label: 'Services',
-        role: 'services',
-        submenu: [],
-      },
-      {
-        type: 'separator',
-      },
-      {
-        label: 'Hide ${appName}',
+        label: `Hide ${appName}`,
         accelerator: 'Command+H',
         role: 'hide',
       },
@@ -43,7 +43,7 @@ const macOSMenu = () => {
         type: 'separator',
       },
       {
-        label: 'Quit ${appName}',
+        label: `Quit ${appName}`,
         accelerator: 'Command+Q',
         click: () => app.quit(),
       }

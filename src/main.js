@@ -34,6 +34,7 @@ import {app, BrowserWindow, Menu} from 'electron'
 const path = require("path");
 
 const AppMenu = require("./templates/menu/menu");
+const { macOSMenu } = require("./templates/menu/macOS")
 const { fileMenu } = require("./templates/menu/file");
 const { windowMenu } = require("./templates/menu/window");
 const { aboutMenu } = require("./templates/menu/about");
@@ -81,7 +82,8 @@ app.on("ready", function () {
 
   if (process.platform === "darwin") {
     const name = electron.app.getName();
-    AppMenu.macOSMenu(template, name);
+    template.unshift(macOSMenu(app, name))
+    // AppMenu.getMacOSMenu(template, name);
   }
   const menu = Menu.buildFromTemplate(template);
   Menu.setApplicationMenu(menu);
