@@ -1,4 +1,4 @@
-# PicPicker (Version 1.0.0)
+# PicPicker (Version 1.0.1)
 
 > This documentation is for users. If you are interested in the installation process for development, please see [the DEVNOTES](documentation/DEVNOTES.md).
 > Please also have a look at [the LICENSE](documentation/LICENSE.md).
