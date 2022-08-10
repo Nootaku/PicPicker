@@ -79,6 +79,13 @@ ipc.on("selectedDir", function (event, isInputDir, dirPath) {
           if (EXTENSIONS.indexOf(path.extname(file)) >= 0) {
             LIST_OF_PICTURES.push(path.join(dirPath, file));
           }
+          // fs.stat(path.join(dirPath, file), (error, stats) => {
+          //   if (error) {
+          //     console.log(error);
+          //   } else {
+          //     console.log(stats);
+          //   }
+          // });
         });
 
         console.log(LIST_OF_PICTURES);
